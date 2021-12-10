@@ -1,0 +1,140 @@
+﻿@model IEnumerable<TruYumOnline.Models.MenuItem>
+
+
+
+@{
+
+    ViewData["Title"] = "GetActiveMenuItems";
+
+}
+
+
+
+<br />
+
+
+
+<td>
+
+    <a href="@Url.Action("ShowCart", "Customer")">Show My Cart</a>
+
+</td>
+
+
+
+<table class="table">
+
+    <thead>
+
+        <tr>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MeName)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MePrice)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MeCategory)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MeFreeDelivery)
+
+            </th>
+
+            <th>Action</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+
+        {
+
+            <tr>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MeName)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MePrice)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MeCategory)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MeFreeDelivery)
+
+                </td>
+
+                <td>
+
+                    <a href="@Url.Action("AddtoCart", "Customer", new { id = item.MeId})">Add to Cart</a>
+
+                </td>
+
+            </tr>
+
+
+
+        }
+
+    </tbody>
+
+</table>
+
+
+
+<div>
+
+    <div class="form-group">
+
+        <a href="@Url.Action("Index", "Home")" class="btn btn-danger">Logout</a>
+
+    </div>
+
+</div>
+
+
+
+@section scripts{
+
+    <script>
+
+
+        $(function () {
+
+            var msg = '@TempData["SuccessMessage"]'
+
+            if (msg != '')
+
+                alert(msg);
+
+        });
+
+    </script>
+
+} 

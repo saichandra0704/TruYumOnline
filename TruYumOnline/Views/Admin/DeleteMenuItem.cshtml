@@ -1,0 +1,115 @@
+﻿@model TruYumOnline.Models.MenuItem
+
+
+
+@{
+
+    ViewData["Title"] = "DeleteMenuItem";
+
+}
+
+
+
+<h1>Delete Menu Item</h1>
+
+
+
+<h3>Are you sure you want to delete this?</h3>
+
+<div>
+
+    <hr />
+
+    <dl class="row">
+
+        @Html.HiddenFor(model => model.MeId)
+
+        <dt class="col-sm-2">
+
+            @Html.DisplayNameFor(model => model.MeName)
+
+        </dt>
+
+        <dd class="col-sm-10">
+
+            @Html.DisplayFor(model => model.MeName)
+
+        </dd>
+
+        <dt class="col-sm-2">
+
+            @Html.DisplayNameFor(model => model.MePrice)
+
+        </dt>
+
+        <dd class="col-sm-10">
+
+            @Html.DisplayFor(model => model.MePrice)
+
+        </dd>
+
+        <dt class="col-sm-2">
+
+            @Html.DisplayNameFor(model => model.MeActive)
+
+        </dt>
+
+        <dd class="col-sm-10">
+
+            @Html.DisplayFor(model => model.MeActive)
+
+        </dd>
+
+        <dt class="col-sm-2">
+
+            @Html.DisplayNameFor(model => model.MeDateOfLaunch)
+
+        </dt>
+
+        <dd class="col-sm-10">
+
+            @Html.DisplayFor(model => model.MeDateOfLaunch)
+
+        </dd>
+
+        <dt class="col-sm-2">
+
+            @Html.DisplayNameFor(model => model.MeCategory)
+
+        </dt>
+
+        <dd class="col-sm-10">
+
+            @Html.DisplayFor(model => model.MeCategory)
+
+        </dd>
+
+        <dt class="col-sm-2">
+
+            @Html.DisplayNameFor(model => model.MeFreeDelivery)
+
+        </dt>
+
+        <dd class="col-sm-10">
+
+            @Html.DisplayFor(model => model.MeFreeDelivery)
+
+        </dd>
+
+    </dl>
+
+
+
+    <form asp-action="DeleteMenuItem">
+
+        <a asp-action="GetMenuItems">Back to List</a>
+
+        <div class="form-group">
+
+            <a href="@Url.Action("Index", "Home")" class="btn btn-danger">Logout</a>
+
+        </div>
+
+    </form>
+
+</div> 

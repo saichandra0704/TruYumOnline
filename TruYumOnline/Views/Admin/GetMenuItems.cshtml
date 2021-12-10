@@ -1,0 +1,158 @@
+﻿@model IEnumerable<TruYumOnline.Models.MenuItem>
+
+
+
+@{
+
+    ViewData["Title"] = "GetMenuItems";
+
+}
+
+<br />
+
+<p>
+
+    <a href="@Url.Action("CreateMenuItem", "Admin")">Create Menu Item</a>
+
+</p>
+
+
+
+<table class="table">
+
+    <thead>
+
+        <tr>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MeName)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MePrice)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MeActive)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MeDateOfLaunch)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MeCategory)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.MeFreeDelivery)
+
+            </th>
+
+            <th>Action</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+
+        {
+
+            <tr>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MeName)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MePrice)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MeActive)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MeDateOfLaunch)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MeCategory)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.MeFreeDelivery)
+
+                </td>
+
+                <td>
+
+                    <a href="@Url.Action("EditMenuItem", "Admin", new { id = item.MeId})">Edit</a>
+
+                    <a href="@Url.Action("DeleteMenuItem", "Admin", new { id = item.MeId})">Delete</a>
+
+                </td>
+
+            </tr>
+
+
+
+        }
+
+    </tbody>
+
+</table>
+
+
+
+<div class="form-group">
+
+    <a href="@Url.Action("Index", "Home")" class="btn btn-danger">Logout</a>
+
+</div>
+
+
+
+@section scripts{
+
+    <script>
+
+
+        $(function () {
+
+            var msg = '@TempData["SuccessMessage"]'
+
+            if (msg != '')
+
+                alert(msg);
+
+        });
+
+    </script>
+
+} 

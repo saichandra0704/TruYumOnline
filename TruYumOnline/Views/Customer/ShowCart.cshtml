@@ -1,0 +1,140 @@
+﻿@model IEnumerable<TruYumOnline.Models.Cart>
+
+
+
+@{
+
+    ViewData["Title"] = "ShowCart";
+
+}
+
+
+
+<h1>Cart</h1>
+
+<table class="table">
+
+    <thead>
+
+        <tr>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.CtPr.MeName)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.CtPr.MeCategory)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.CtPr.MeFreeDelivery)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.CtPr.MePrice)
+
+            </th>
+
+            <th></th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+
+        {
+
+            <tr>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.CtPr.MeName)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.CtPr.MeCategory)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.CtPr.MeFreeDelivery)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.CtPr.MePrice)
+
+                </td>
+
+                <td>
+
+                    <a href="@Url.Action("DeleteItem", "Customer", new { id = item.CtId})">Delete</a>
+
+                </td>
+
+            </tr>
+
+
+
+        }
+
+    <td></td>
+
+    <td></td>
+
+    <td>Total</td>
+
+
+
+    <td>@ViewBag.Total</td>
+
+    </tbody>
+
+</table>
+
+<div>
+
+    <a asp-action="GetActiveMenuItems">Back to List</a>
+
+    <div class="form-group">
+
+        <a href="@Url.Action("Index", "Home")" class="btn btn-danger">Logout</a>
+
+    </div>
+
+</div>
+
+
+
+@section scripts{
+
+    <script>
+
+
+        $(function () {
+
+            var msg = '@TempData["SuccessMessage"]'
+
+            if (msg != '')
+
+                alert(msg);
+
+        });
+
+    </script>
+
+} 

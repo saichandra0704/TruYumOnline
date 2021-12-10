@@ -1,0 +1,113 @@
+﻿@model TruYumOnline.Models.MenuItem
+
+
+
+@{
+
+    ViewData["Title"] = "CreateMenuItem";
+
+}
+
+
+
+<h1>CreateMenuItem</h1>
+
+
+
+<h4>MenuItem</h4>
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <form asp-action="CreateMenuItem">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+
+                <label asp-for="MeName" class="control-label"></label>
+
+                <input asp-for="MeName" class="form-control" />
+
+                <span asp-validation-for="MeName" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="MePrice" class="control-label"></label>
+
+                <input asp-for="MePrice" class="form-control" />
+
+                <span asp-validation-for="MePrice" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="MeActive" class="control-label"></label>
+
+                <input asp-for="MeActive" class="form-control" />
+
+                <span asp-validation-for="MeActive" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="MeDateOfLaunch" class="control-label"></label>
+
+                <input asp-for="MeDateOfLaunch" class="form-control" />
+
+                <span asp-validation-for="MeDateOfLaunch" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="MeCategory" class="control-label"></label>
+
+                <input asp-for="MeCategory" class="form-control" />
+
+                <span asp-validation-for="MeCategory" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="MeFreeDelivery" class="control-label"></label>
+
+                <input asp-for="MeFreeDelivery" class="form-control" />
+
+                <span asp-validation-for="MeFreeDelivery" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="submit" value="Create" class="btn btn-primary" />
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<div>
+
+    <a asp-action="GetMenuItems">Back to List</a>
+
+    <div class="form-group">
+
+        <a href="@Url.Action("Index", "Home")" class="btn btn-danger">Logout</a>
+
+    </div>
+
+</div> 

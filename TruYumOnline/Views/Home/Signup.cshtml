@@ -1,0 +1,111 @@
+﻿@model TruYumOnline.Models.UserRecord
+
+
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Signup</title>
+
+</head>
+
+<body>
+
+
+
+    <h4>Signup</h4>
+
+    <hr />
+
+
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <form asp-action="Signup">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+
+                    <label asp-for="UsFname" class="control-label"></label>
+
+                    <input asp-for="UsFname" class="form-control" />
+
+                    <span asp-validation-for="UsFname" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label asp-for="UsLname" class="control-label"></label>
+
+                    <input asp-for="UsLname" class="form-control" />
+
+                    <span asp-validation-for="UsLname" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label asp-for="UsUsername" class="control-label"></label>
+
+                    <input asp-for="UsUsername" class="form-control" />
+
+                    <span asp-validation-for="UsUsername" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label asp-for="UsPassword" class="control-label"></label>
+
+                    <input asp-for="UsPassword" class="form-control" />
+
+                    <span asp-validation-for="UsPassword" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label asp-for="UsRole" class="control-label"></label>
+
+                    <input asp-for="UsRole" class="form-control" />
+
+                    <span asp-validation-for="UsRole" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input type="submit" value="Create" class="btn btn-primary" />
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <div>
+
+        <a asp-action="Index">Back to List</a>
+
+    </div>
+
+
+
+</body>
+
+</html> 

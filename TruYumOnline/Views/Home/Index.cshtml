@@ -1,0 +1,59 @@
+﻿@model TruYumOnline.Models.UserRecord
+
+
+
+<h1>Login</h1>
+
+
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <form asp-action="Index">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+            <div class="form-group">
+
+                <label asp-for="UsUsername" class="control-label"></label>
+
+                <input asp-for="UsUsername" class="form-control" />
+
+                <span asp-validation-for="UsUsername" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="UsPassword" class="control-label"></label>
+
+                <input asp-for="UsPassword" class="form-control" />
+
+                <span asp-validation-for="UsPassword" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="submit" value="Login" class="btn btn-primary" />
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<div>
+
+    <a asp-action="Signup">Sign Up</a>
+
+</div> 
